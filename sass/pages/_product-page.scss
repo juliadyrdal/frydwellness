@@ -1,0 +1,401 @@
+// *** PRODUCT INFO - DYNAMIC CONTENT *** //
+
+// The image and text in 'product info' should be dynamic content
+// pulled from Shopify and editable in the products section in the
+// Shopify store. See specifications.
+
+.product-info {
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto;
+    width: 80%;
+
+    @include respond(tab-port) {
+        flex-direction: column;
+    }
+
+    @include respond(phone) {
+        width: 100%;
+    }
+
+    &__images {
+        margin-right: 4rem;
+
+        @include respond(tab-land) {
+            margin-right: 0;
+        }
+    }
+
+    // *** Product images *** //
+    // Need library to zoom in on images on mouseover,
+    // and also to slide through images. See example from email.
+    // Please center the small images between carousel arrows. If
+    // the library has a different design that might also be fine.
+
+    &__image-large {
+       width: 52rem;
+       height: 56rem;
+
+       @include respond(tab-land) {
+           width: 42rem;
+           height: 46rem;
+       }
+
+       @include respond(tab-port) {
+           width: 100%;
+           height: 100%;
+       }
+    }
+
+    &__image-row {
+        margin-top: 1rem;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+
+    &__image-small {
+        padding: .7rem;
+
+        @include respond(tab-land) {
+            width: 6rem;
+            height: 6rem;
+        }
+
+    }
+    // *** Product images END *** //
+
+    // *** Product details *** //
+    &__details {
+        margin-left: 4rem;
+        margin-right: 0rem;
+        padding-top: 4rem;
+        padding-left: 8rem;
+        padding-right: 8rem;
+
+        background: #F8F1EC;
+
+        @include respond(tab-land) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        @include respond(tab-port) {
+            margin-left: 0;
+            margin-top: 6rem;
+        }
+    }
+
+    &__heading {
+        font-size: 3rem;
+        font-weight: 600;
+
+        @include respond(tab-port) {
+            font-size: 5rem;
+        }
+    }
+
+    &__measure {
+        margin-top: 1.5rem;
+        list-style: none;
+        font-size: 1.6rem;
+
+        @include respond(tab-port) {
+            margin-top: 3rem;
+            font-size: 3rem;
+        }
+    }
+
+    &__price {
+        margin-top: 4rem;
+        margin-block-end: 1.5rem;
+        font-size: 3rem;
+        font-weight: 600;
+        color: $color-accent;
+
+        @include respond(tab-port) {
+            font-size: 6rem;
+        }
+    }
+
+    &__compare-at-price {
+        margin-top: 2rem;
+        font-size: 1.6rem;
+
+        @include respond(tab-port) {
+            margin-top: 4rem;
+            font-size: 3rem;
+        }
+    }
+
+    &__discount {
+        margin-top: 1.5rem;
+        margin-bottom: .7rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+
+        @include respond(tab-port) {
+            font-size: 3.4rem;
+        }
+    }
+
+    &__savings {
+        margin-bottom: 4rem;
+        margin-top: 1.5rem;
+        font-size: 1.6rem;
+
+        @include respond(tab-port) {
+            font-size: 3rem;
+        }
+    }
+
+    &__button {
+        display: block;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+        padding: 1.5rem 5rem;
+        background: $color-accent;
+        color: #fff;
+        font-size: 1.6rem;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 600;
+
+        @include respond(tab-port) {
+            margin-top: 8rem;
+            padding: 3rem 5rem;
+            font-size: 3.4rem;
+        }
+
+        @include respond(phone) {
+
+            font-size: 2.6rem;
+        }
+    }
+
+    &__button:hover {
+        background-color: darken($color-accent, 5%);
+    }
+
+    &__levering {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        padding: 2.5rem 2.5rem;
+        text-align: center;
+        background: #fff;
+        border-radius: 10px;
+
+        @include respond(tab-port) {
+            padding: 4rem 3rem;
+        }
+    }
+
+    &__levering-text {
+        padding-bottom: .7rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+
+        @include respond(tab-port) {
+            font-size: 2.6rem;
+        }
+    }
+
+    &__levering-link {
+        font-size: 1.4rem;
+        color: #454545;
+
+        @include respond(tab-port) {
+            font-size: 2.4rem;
+        }
+    }
+
+    // *** Product details END *** //
+}
+
+
+// *** TAB SECTION - DYNAMIC CONTENT *** //
+
+// The 2 first tabs should contain dynamic content from the
+// corresponding product. This should be editable from the products
+// section in the Shopify store. The other tabs contain static
+// content and should be hard coded.
+
+.section-tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 0 auto;
+    width: 80%;
+
+    margin-top: 6rem;
+
+    & > .heading {
+
+        @include respond(tab-port) {
+            font-size: 6rem;
+        }
+
+        @include respond(phone) {
+            font-size: 3.5rem;
+        }
+    }
+} 
+
+
+// *** Tab menu *** //
+
+.tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+}
+  
+.tabset .tab-panel {
+    display: none;
+}
+  
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+}
+  
+  
+.tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 15px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+  
+.tabset > input:checked + label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+}
+  // *** Tab menu END *** //
+
+  
+  // *** Tab content *** //
+.tab-panel {
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+
+    &__heading {
+        padding-top: 1rem;
+        font-size: 1.6rem;
+    }
+
+    &__paragraph {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+}
+  
+  .tabset {
+    margin-top: 4rem;
+    max-width: 80%;
+  }
+  // *** Tab content END *** //
+
+
+// *** Popup *** //
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba($color: #000000, $alpha: .5);
+    color: #333;
+
+    &__heading {
+        color: $color-primary;
+        font-size: 2.6rem;
+    }
+
+    &__heading-sub {
+        padding-top: 2rem;
+        font-size: 2rem;
+    }
+
+    &__paragraph {
+        margin-top: 2rem;
+        font-size: 1.6rem;
+    }
+
+    &__list {
+        list-style: none;
+        margin-top: 1.5rem;
+        font-size: 1.6rem;
+    }
+
+    &__item {
+        margin-top: .5rem;
+    }
+
+    &__link {
+        color: #333;
+    }
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    margin: 5% auto;
+    padding: 2rem 4rem;
+    padding-bottom: 4rem;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba($color: #000000, $alpha: .4), 0 7px 20px 0 rgba($color: #000000, $alpha: .4);
+    animation-name: modalopen;
+    animation-duration: .7s;
+
+    @include respond(tab-port) {
+        width: 80%;
+        margin: 10% auto;
+    } 
+
+    @include respond(phone-xl) {
+        width: 80%;
+        margin: 55% auto;
+    } 
+}
+
+.closeBtn {
+    align-self: flex-end;
+    color: #ccc;
+    font-size: 3rem;
+
+    &:hover, &:focus {
+        color: #333;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// *** Popup END *** //

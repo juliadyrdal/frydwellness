@@ -1,0 +1,305 @@
+// *** HERO SECTION *** //
+
+.section-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 55vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba(#000, 0.4), 
+        rgba(#000, 0.4)), 
+        url("../img/collectionsall-hero.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-text-box {
+
+    @include respond(tab-port) {
+        width: 90%;
+    }
+}
+
+.hero-heading {
+    font-size: 6.5rem;
+    color: #fff;
+
+    @include respond(tab-port) {
+        font-size: 5rem;
+        text-align: center;
+    }
+
+    @include respond(phone) {
+        font-size: 4rem;
+    }
+}
+
+
+// *** ABOUT PRODUCTS SECTION *** //
+
+.section-about-products {
+    margin-top: 8rem;
+}
+
+.about-products {
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto;
+    width: 80%;
+
+    @include respond(tab-port) {
+        flex-direction: column;
+    }
+
+    @include respond(phone) {
+        width: 88%;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 3rem;
+    }
+
+    &__paragraph {
+        display: block;
+        font-size: 1.6rem;
+        line-height: 3rem;
+    }
+
+    &__images {
+        margin-left: 3rem;
+
+        @include respond(tab-port) {
+            display: flex;
+            
+            margin-top: 6rem;
+            margin-left: 0;
+        }
+
+        @include respond(phone) {
+            flex-direction: column;
+        }
+
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+
+        @include respond(phone) {
+            justify-content: space-around;
+        }
+    }
+
+    &__row:not(:last-child) {
+        margin-bottom: 2.5rem;
+
+        @include respond(tab-port) {
+            margin-right: 2.5rem;
+        }
+    }
+
+    &__image-small {
+        width: 13rem;
+        height: 13rem;
+
+        @include respond(tab-land) {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        @include respond(tab-port) {
+            width: 11rem;
+            height: 11rem;
+        }
+    }
+
+    &__image-small:not(:last-child) {
+        margin-right: 2.5rem;
+    }
+
+}
+
+
+
+// *** OUR MODELS SECTION *** //
+
+.section-our-models {
+    margin-top: 10rem;
+}
+
+.our-models {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 0 auto;
+    width: 80%;
+
+    text-align: center;
+
+    @include respond(tab-port) {
+        width: 80%;
+    }
+
+    @include respond(phone) {
+        width: 88%;
+    }
+
+    &__heading {
+        font-size: 6rem;
+    }
+    
+    &__paragraph {
+        padding: 2rem 12rem;
+        font-size: 1.6rem;
+        line-height: 3rem;
+        text-align: left;
+
+        @include respond(tab-port) {
+            padding: 2rem 6rem;
+        }
+
+        @include respond(phone) {
+            padding: 2rem 0rem;
+        }
+    }
+}
+
+
+
+// *** PRODUCTS SECTION *** //
+
+.section-products {
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+}
+
+.product-row {
+    display: flex;
+    justify-content: space-around;
+
+    margin: 0 auto;
+    width: 70%;
+
+    @include respond(phone) {
+        flex-direction: column;
+        align-items: center;
+        width: 88%;
+    }
+}
+
+.product-card:nth-child(2) {
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+}
+
+
+// *** PRODUCT CARD - DYNAMIC CONTENT *** //
+// The image and text in the product card should be dynamic content
+// pulled from Shopify and editable in the products section in the
+// Shopify store. See specifications.
+
+.product-card {
+
+    width: 20rem;
+    font-size: 1.6rem;
+
+    @include respond(phone) {
+        width: 40rem;
+        font-size: 1.8rem;
+    }
+
+    &__image {
+        width: 20rem;
+        height: 26rem;
+
+        @include respond(phone) {
+            width: 40rem;
+            height: 46rem;
+        }
+    }
+
+    &__heading {
+        margin-top: 4rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+
+        @include respond(phone) {
+            font-size: 2.4rem;
+        }
+    }
+
+    &__list {
+        margin-top: 2rem;
+        list-style: none;
+    }
+
+    &__price {
+        margin-top: 2.5rem;
+        font-size: 1.8rem;
+        color: $color-accent;
+        font-weight: 600;
+
+        @include respond(phone) {
+            font-size: 4.2rem;
+        }
+    }
+
+    &__compare-at-price {
+        margin-top: 1rem;
+
+        @include respond(phone) {
+            margin-top: 2rem;
+        }
+    }
+
+    &__discount {
+        margin-top: .5rem;
+        font-weight: 600;
+
+        @include respond(phone) {
+            margin-top: 1rem;
+        }
+    }
+
+    &__savings {
+        margin-top: .5rem;
+
+        @include respond(phone) {
+            margin-top: 1rem;
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        margin-top: 3rem;
+        padding: .7rem 3.5rem;
+        color: #fff;
+        background-color: $color-accent;
+        text-decoration: none;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+
+        @include respond(phone) {
+            display: block;
+            margin-top: 3rem;
+            margin-bottom: 6rem;
+            text-align: center;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+    }
+
+    &__button:hover {
+        background: darken($color-accent, 5%);
+    }
+}
